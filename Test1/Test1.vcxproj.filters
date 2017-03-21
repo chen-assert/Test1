@@ -33,7 +33,7 @@
     <ClCompile Include="p1914.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源.cpp">
+    <ClCompile Include="swiss wheel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
