@@ -18,9 +18,6 @@
     <ClCompile Include="P1425.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="p1421.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="p1055.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -33,8 +30,11 @@
     <ClCompile Include="p1914.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="swiss wheel.cpp">
+    <ClCompile Include="qsort.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="swiss wheel--not complete.cpp">
+      <Filter>资源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
