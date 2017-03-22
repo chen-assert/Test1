@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h>qqq
 #include<algorithm>
 #include<stdlib.h>
 #include<time.h>
