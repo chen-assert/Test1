@@ -30,11 +30,11 @@
     <ClCompile Include="p1914.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="qsort.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="swiss wheel--not complete.cpp">
       <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="eight queens.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
