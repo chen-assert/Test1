@@ -34,6 +34,12 @@
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="eight queens.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\jingr\Desktop\qsortf.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BFS1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
