@@ -38,7 +38,7 @@ void qsort(int *N, int s, int e) {//array,start,end
 	int ls = s;//left search
 	int k = s;
 	while (1) {//base number place one time
-		while (ls != rs&&N[rs]>b) {
+		while (ls != rs&&N[rs] > b) {
 			rs--;
 		}
 		if (ls == rs)break;
@@ -46,7 +46,7 @@ void qsort(int *N, int s, int e) {//array,start,end
 		k = rs;
 		ls++;
 		//if (ls == rs)break; //Commented BB
-		while (ls != rs&&N[ls]<b) {
+		while (ls != rs&&N[ls] < b) {
 			ls++;
 		}
 		if (ls == rs)break;
@@ -66,26 +66,27 @@ void qsort(int *N, int s, int e) {//array,start,end
 }
 void mergearray(int *N, int s, int mid, int e, int *t) {
 	int s1 = s;
-	int s2 = mid+1;
+	int s2 = mid + 1;
 	int i = 0;
-	while (i<=e-s) {
-		if (N[s1] <= N[s2]) {
-			t[i++] = N[s1];
-			if(s1<mid)s1++;
+	while (i <= e - s) {
+		if ((N[s1] <= N[s2] && s1<=mid)||s2>e) {
+			t[i++] = N[s1++];
+			
 		}
 		else {
-			t[i++] = N[s2];
-			if (s2 < e)s2++;
+			t[i++] = N[s2++];
+			
 		}
-		for (int i = 0; i <= (e - s); i++) {
-
 	}
+	for (int i = 0; i <= (e - s); i++) {
+		N[i + s] = t[i];
 	}
+	return;
 }
-void msort(int *N,int s,int e,int *t) {
+void msort(int *N, int s, int e, int *t) {
 	if (s < e) {
 		int mid = (s + e) / 2;
-		msort(N,s,mid,t);
+		msort(N, s, mid, t);
 		msort(N, mid + 1, e, t);
 		mergearray(N, s, mid, e, t);
 	}
@@ -95,7 +96,7 @@ int main() {
 	int n;
 	scanf("%d", &n);
 	int *number = (int*)malloc(sizeof(int)*n);
-	for (int i = 0; i<n; i++) {
+	for (int i = 0; i < n; i++) {
 		scanf("%d", &number[i]);
 		//number[i] = 10;
 	}
@@ -105,9 +106,9 @@ int main() {
 		printf("new fail");
 		return -1;
 	}
-		
-	msort(number, 0, n - 1,t);
-	for (int i = 0; i<n; i++) {
+
+	msort(number, 0, n - 1, t);
+	for (int i = 0; i < n; i++) {
 		printf("%d ", number[i]);
 	}
 	printf("\n");

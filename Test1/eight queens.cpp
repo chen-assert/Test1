@@ -5,7 +5,8 @@
 using namespace std;
 int n;
 int s = 0;
-bool b[256][4] = { 0 };//1/2/3层分别为行，左斜，右斜//0-可行 1-不可行
+bool b[256][4] = { 0 };
+					   //1/2/3层分别为行，左斜，右斜//0-可行 1-不可行
 					   //int research(int depth, int q[]) {
 					   //	for (int i = 1; i < depth; i++) {
 					   //		if (q[depth] == q[i])return 0;
