@@ -1,62 +1,50 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
-#include<malloc.h>
-#include<iostream>
-#include<vector>
-struct qs {
-	int time;
-	int pass;
+/*
+HDBEAFCG
+HDEBFGCA
+ABDHECFG
+*/
+char mid[100];
+char beh[100];
+struct tree{
+	tree *root;
+	tree *left;
+	tree *right;
+	char name;
 };
-struct ans {
-	int ques;
-	int stime;
-};
-using namespace std;
-int main() {
-	int T;
-	scanf("%d", &T);
-	for (int x = 0; x < T; x++) {
-		int m, n, q;
-		scanf("%d %d %d", &n, &m, &q);
-		qs **people = (qs**)malloc((n + 1) * sizeof(qs*));
-		for (int i = 0; i <= n; i++) {
-			people[i] = (qs*)malloc((m + 1) * sizeof(qs));
-			for (int o = 0; o <= m; o++)people[i][o] = { 0,0 };
+tree *generate(int start,int end,tree *root,int target) {
+	if (start > end)return NULL;
+	int local;
+	tree *main;
+	main=(tree*)malloc(sizeof(tree));
+	*main = { root, NULL,NULL,beh[target]};
+	if (start == end)return main;
+	for (int i = 0;; i++) {
+		if (mid[i] == beh[target]) {
+			local = i;
+			break;
 		}
-		for (int y = 0; y < q; y++) {
-			int p, t, r, s;
-			scanf("%d %d %d %d", &p, &t, &r, &s);
-			if (people[p][r].pass == 1)continue;
-			if (s == 0) people[p][r].time += 20;
-			if (s == 1) {
-				people[p][r].time += t;
-				people[p][r].pass = 1;
-			}
-		}
-		ans *peoans = (ans*)malloc((n + 1) * sizeof(ans));
-		for (int i = 0; i <= n; i++)peoans[i] = { 0,0 };
-		for (int i = 1; i <= n; i++) {
-			for (int o = 1; o <= m; o++) {
-				if (people[i][o].pass == 1) {
-					peoans[i].ques += 1;
-					peoans[i].stime += people[i][o].time;
-				}
-			}
-		}
-		int rank = 1;
-		for (int i = 2; i <= n; i++) {
-			if (peoans[i].ques == peoans[1].ques) {
-				if (peoans[i].stime < peoans[1].stime) {
-					rank++;
-				}
-			}
-			if (peoans[i].ques > peoans[1].ques) {
-				rank++;
-			}
-		}
-		printf("%d %d %d\n", rank,peoans[1].ques,peoans[1].stime);
-		free(peoans);
-		for (int i = 0; i <= n; i++) free(people[i]);
-		free(people);
 	}
+	int q = local - start;
+	int h = end - local;
+	//printf("%d", local);
+	main->left = generate(start, local - 1, main,target-h-1);
+	main->right = generate(local + 1, end, main,target-1);
+	return main;
+}
+void output(tree *maintree) {
+	printf("%c", maintree->name);
+	if (maintree->left != NULL)output(maintree->left);
+	if (maintree->right != NULL)output(maintree->right);
+	return;
+}
+int main() {
+	scanf("%s", &mid);
+	scanf("%s", &beh);
+	int start = 0;
+	int end = strlen(mid)-1;
+	tree *maintree=generate(start, end, NULL,end);
+	output(maintree);
 }

@@ -48,6 +48,9 @@
     <ClCompile Include="simple 并查集.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ACMrule.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
     <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
