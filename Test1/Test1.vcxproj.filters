@@ -30,9 +30,6 @@
     <ClCompile Include="p1914.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="swiss wheel--not complete.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="eight queens.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -60,11 +57,20 @@
     <ClCompile Include="tower.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Goldbach.cpp">
       <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="primejudge.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="swiss wheel.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="State compression？.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="01maze.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
