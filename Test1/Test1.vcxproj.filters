@@ -70,7 +70,22 @@
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="01maze.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="minimum connection.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Sudoku--terrible.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="High-precision.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="function point test.cpp">
+      <Filter>资源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
