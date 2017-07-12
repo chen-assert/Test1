@@ -18,9 +18,6 @@
     <ClCompile Include="P1425.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="T2.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="T3.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -66,9 +63,6 @@
     <ClCompile Include="State compression？.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="01maze.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="minimum connection.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -87,11 +81,26 @@
     <ClCompile Include="hex conversion.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="submatrix--backup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="01maze.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="虫食算.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DFS-shortest path.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="最小生成树.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
     <ClCompile Include="源1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="submatrix--backup.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="PAT top1001%28Kruskal%29.cpp">
+      <Filter>资源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
