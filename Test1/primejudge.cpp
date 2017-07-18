@@ -20,16 +20,12 @@ int sai(int a) {
 int main() {
 	memset(record, 0, sizeof(int) * 10000011);
 	scanf("%d %d", &n, &m);
-	//double start, end;
-	//start = clock();
 	int t = 2;
 	while (1) {
 		t = sai(t);
 		if (t > sqrt(n))break;
 	}
 	record[1] = 1;
-	//end = clock();
-	//printf("time is %lf", (end - start) / CLOCKS_PER_SEC);
 	for (int i = 0; i < m; i++) {
 		scanf("%d", &t);
 		if (record[t] == 0)printf("Yes\n");
