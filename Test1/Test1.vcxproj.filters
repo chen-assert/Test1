@@ -99,7 +99,16 @@
     <ClCompile Include="虫食算.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源1.cpp">
+    <ClCompile Include="PAT top1003(max flow).cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PAT top1004.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="segment tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
