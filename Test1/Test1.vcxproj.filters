@@ -108,7 +108,13 @@
     <ClCompile Include="segment tree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源.cpp">
+    <ClCompile Include="KMP and Sunday.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TOP 1005%28hash%29.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lca.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

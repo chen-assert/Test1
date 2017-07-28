@@ -6,37 +6,68 @@
 #include<queue>
 #include<time.h>
 #include<stack>
+//#include<windows.h>
 #define range(i, s, e) for (int i = s; i < int(e); i++)
 #define range0(i, e) for (int i = 0; i < int(e); i++)
 #define input_int(n) int n;scanf("%d",&n);
-//#include<windows.h>
+typedef unsigned long long ull;
 using namespace std;
-//need hash?
-int next_[1100000];
-int len;
-char str[1100000];
-int strcmp_(char *a, char *b, int start, int len) {
-	range(i, start, len) {
-		if (a[i] != b[i])return a[i] - b[i];
-	}
-	return 0;
-}
-void get_next(char *start) {
-	//memset
-	
-	range0(a, len) {
-		char *end = start +a;
-		for (int b = a; b > 0; b--) {
-			if (strcmp_(start, end - b+1, 0, b) == 0) {
-				next_[a] = b;
-				break;
+bool goodletter[500];
+char pattern[1000010];
+int pattern_len;
+int query_len;
+char query[1000010];
+int test() {
+	int j, k;
+	for (j = 0, k = 0; (j < pattern_len)&& (k<query_len);) {
+		if (pattern[j] == '?') {
+			if (goodletter[query[k]] == 1) {
+				j++; k++;
+				continue;
+			}
+			else {
+				return -1;
 			}
 		}
+		if (pattern[j] == '*') {
+			for (int i = k; i <= query_len - (pattern_len - j); i++) {
+				if (goodletter[query[i]] == 0)continue;
+				else {
+					return -1;
+				}
+			}
+			j++;
+			k += max((query_len - pattern_len + 1),0);
+			continue;
+		}
+		if (pattern[j] == query[k]) {
+			j++; k++;
+			continue;
+		}
+		return -1;
 	}
+	if (j != pattern_len || k != query_len) {
+		if (j == pattern_len - 1 && pattern[j] == '*')return 1;
+		else return -1;
+	}
+	else return 1;
 }
 int main() {
-	scanf("%d", &len);
-	scanf("%s", str);
-	get_next(str);
-	range0(i, 7)printf("%d ", next_[i]);
+	char temp = 0;
+	while (1) {
+		scanf("%c", &temp);
+		if (temp == '\n')break;
+		goodletter[temp] = 1;
+	}
+	scanf("%s", &pattern);
+	pattern_len = strlen(pattern);
+
+	input_int(n);
+	range0(i, n) {
+		scanf("%s", query);
+		query_len = strlen(query);
+		if (test() == 1)printf("YES\n");
+		else printf("NO\n");
+	}
+	//getchar();
 }
