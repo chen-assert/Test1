@@ -13,12 +13,12 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="资源文件\Filter">
+      <UniqueIdentifier>{5b23edef-f03c-44f2-b295-82b8a751bd9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="P1425.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="T3.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="p1914.cpp">
@@ -105,16 +105,34 @@
     <ClCompile Include="PAT top1004.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="segment tree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="KMP and Sunday.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="TOP 1005%28hash%29.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="lca.cpp">
+    <ClCompile Include="segment tree.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lcat4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="algorithm LCA.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_T3.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="t3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="427 t2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="427 t3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="427 t4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -123,7 +141,10 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="segment tree.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

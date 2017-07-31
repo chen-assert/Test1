@@ -9,8 +9,8 @@ using namespace std;
 int n, m;
 int record[10000010];
 int sai(int a) {
-	for (int i = 2*a; i <= n; i+=a) {
-		if(record[i]==0)record[i] = 1;
+	for (int i = 2 * a; i <= n; i += a) {
+		if (record[i] == 0)record[i] = 1;
 		//printf("%d ", a*i);
 	}
 	for (int i = a + 1;; i++) {
