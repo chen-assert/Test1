@@ -54,9 +54,6 @@
     <ClCompile Include="Goldbach.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="primejudge.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="swiss wheel.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -83,9 +80,6 @@
     </ClCompile>
     <ClCompile Include="submatrix--backup.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="01maze.cpp">
-      <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="DFS-shortest path.cpp">
       <Filter>资源文件</Filter>
@@ -117,23 +111,14 @@
     <ClCompile Include="lcat4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="algorithm LCA.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="_T3.cpp">
+    <ClCompile Include="div.2 427 t4.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="t3.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="primejudge.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="427 t2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="427 t3.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="427 t4.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="algorithm LCA%28tarjan%29.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

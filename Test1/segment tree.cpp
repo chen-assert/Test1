@@ -12,9 +12,9 @@
 #define input_int(n) int n;scanf("%d",&n);
 using namespace std;
 static long long p=10000000;
-struct node {
-	node* left;
-	node* right;
+struct segment_tree_node {
+	segment_tree_node* left;
+	segment_tree_node* right;
 	int begin;
 	int mid;
 	int end;
@@ -23,9 +23,9 @@ struct node {
 	long long multi_delay_amount;
 	long long sum;
 };
-node* create_segment_tree(int begin, int end,long long array[]) {
-	node *operated_node = (node*)malloc(sizeof(node));
-	memset(operated_node, 0, sizeof(node));
+segment_tree_node* create_segment_tree(int begin, int end,long long array[]) {
+	segment_tree_node *operated_node = (segment_tree_node*)malloc(sizeof(segment_tree_node));
+	memset(operated_node, 0, sizeof(segment_tree_node));
 	operated_node->begin = begin;
 	operated_node->mid = (begin + end) / 2;
 	operated_node->end = end;
@@ -40,10 +40,10 @@ node* create_segment_tree(int begin, int end,long long array[]) {
 	}
 	return operated_node;
 }
-int push_delay(node *operated_node) {
+int push_delay(segment_tree_node *operated_node) {
 	if (operated_node->left != 0) {//
-		node *&left_node = operated_node->left;
-		node *&right_node = operated_node->right;
+		segment_tree_node *&left_node = operated_node->left;
+		segment_tree_node *&right_node = operated_node->right;
 		left_node->sum *= operated_node->multi_delay_amount;
 		left_node->sum %= p;
 		left_node->sum += (operated_node->plus_delay_amount)*left_node->size;
@@ -70,7 +70,7 @@ int push_delay(node *operated_node) {
 	operated_node->multi_delay_amount = 1;
 	return 0;
 }
-long long search(int begin, int end, node *operated_node) {
+long long search(int begin, int end, segment_tree_node *operated_node) {
 	if (operated_node->begin >= begin && operated_node->end <= end) {
 		return operated_node->sum;
 	}
@@ -85,7 +85,7 @@ long long search(int begin, int end, node *operated_node) {
 		return return_num;
 	}
 }
-int update_multiply(int begin, int end, long long mul, node *operated_node) {
+int update_multiply(int begin, int end, long long mul, segment_tree_node *operated_node) {
 	if (operated_node->begin >= begin && operated_node->end <= end) {
 		operated_node->sum *= mul;
 		operated_node->sum %= p;
@@ -104,7 +104,7 @@ int update_multiply(int begin, int end, long long mul, node *operated_node) {
 	}
 	return 0;
 }
-int update_plus(int begin, int end, long long plus, node *operated_node) {
+int update_plus(int begin, int end, long long plus, segment_tree_node *operated_node) {
 	if (operated_node->begin >= begin && operated_node->end <= end) {
 		operated_node->sum += (operated_node->size)*plus;
 		operated_node->sum %= p;
@@ -120,4 +120,7 @@ int update_plus(int begin, int end, long long plus, node *operated_node) {
 		operated_node->sum = operated_node->left->sum + operated_node->right->sum;
 	}
 	return 0;
+}
+void modify_mod(long long t) {
+	p = t;
 }

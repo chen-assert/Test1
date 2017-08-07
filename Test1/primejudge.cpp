@@ -5,31 +5,26 @@
 #include<math.h>
 #include<cstring>
 #include<time.h>
+#define _MAX 10000012
 using namespace std;
 int n, m;
-int record[10000010];
-int sai(int a) {
-	for (int i = 2 * a; i <= n; i += a) {
-		if (record[i] == 0)record[i] = 1;
-		//printf("%d ", a*i);
-	}
-	for (int i = a + 1;; i++) {
-		if (record[i] == 0)return i;
-	}
-}
+bool record[_MAX];//save whether this is a prime
+int primes[_MAX];//save the prime list
+int num = 0;
 int main() {
-	memset(record, 0, sizeof(int) * 10000011);
 	scanf("%d %d", &n, &m);
-	int t = 2;
-	while (1) {
-		t = sai(t);
-		if (t > sqrt(n))break;
+	record[0] = record[1] = 1;
+	for (int i = 2; i <= n / 2 + 1; i++) {
+		if (record[i] == 0)primes[num++] = i;
+		for (int o = 0; o < num && primes[o] * i <= n; o++) {
+			record[primes[o] * i] = 1;
+			if (i%primes[o] == 0) break;
+		}
 	}
-	record[1] = 1;
 	for (int i = 0; i < m; i++) {
+		int t = 0;
 		scanf("%d", &t);
 		if (record[t] == 0)printf("Yes\n");
 		else printf("No\n");
 	}
-	//for (int i = 1; i <= number; i++)printf("%d  ", prime[i]);
 }

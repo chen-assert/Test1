@@ -13,15 +13,12 @@
 #define range(i, s, e) for (int i = s; i < int(e); i++)
 #define range0(i, e) for (int i = 0; i < int(e); i++)
 #define input_int(n) int n;scanf("%d",&n);
-#define INF 0x3f3f3f3f
-typedef unsigned long long ull;
 using namespace std;
+int n, m, s;
 int parent[500010];
 int visited[500010];
 int head[500010];
 int qhead[500010];
-int ans[500010];
-int rank_[500010];
 struct NODE {
 	int to;
 	int last;
@@ -30,7 +27,7 @@ struct QUERY {
 	int to;
 	int last;
 }search_[1000010];
-;
+int ans[500010];
 int find(int i) {
 	if (parent[i] == i)return i;
 	else return parent[i] = find(parent[i]);
@@ -62,24 +59,24 @@ void tarjan(int u, NODE *node, QUERY *search, int from) {
 		}
 	}
 }
-int find_rank(int to,int from,int now_rank) {//预查询各节点rank
-	rank_[to] = now_rank;
-	for (int v = head[to]; v != 0; v = node[v].last) {	              
-		if (node[v].to == from)continue;
-		                
-	}
-}
 int main() {
-	input_int(n);
-	input_int(q);
-	for (int i = 2; i <= n; i++) {
-		int t;
-		scanf("%d", &t);
-		add(t, i, i * 2 );
-		add(i, t, i * 2 + 1);
+	scanf("%d %d %d", &n, &m, &s);
+	range0(i, n + 1)parent[i] = i;
+	int x, y;
+	range0(i, n - 1) {
+		scanf("%d %d", &x, &y);
+		add(x, y, i * 2 + 2);
+		add(y, x, i * 2 + 1 + 2);
 	}
-	find_rank(1,1,1);
-		range0(i, q) {
-		
+	int a, b;
+	range0(i, m) {
+		scanf("%d %d", &a, &b);
+		qadd(a, b, i * 2 + 2);
+		qadd(b, a, i * 2 + 1 + 2);
+	}
+	visited[s] = 1;
+	tarjan(s, node, search_, s);
+	range(i, 1, m + 1) {
+		printf("%d\n", ans[i]);
 	}
 }
