@@ -108,9 +108,6 @@
     <ClCompile Include="segment tree.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="lcat4.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="div.2 427 t4.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -119,6 +116,12 @@
     </ClCompile>
     <ClCompile Include="algorithm LCA%28tarjan%29.cpp">
       <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="div.2 425 t4%28lca%29.cpp">
+      <Filter>资源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
