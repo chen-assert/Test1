@@ -27,9 +27,6 @@
     <ClCompile Include="eight queens.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BFS1.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="sort.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -102,9 +99,6 @@
     <ClCompile Include="KMP and Sunday.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="TOP 1005%28hash%29.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="segment tree.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
@@ -114,14 +108,26 @@
     <ClCompile Include="primejudge.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="algorithm LCA%28tarjan%29.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="源.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="div.2 425 t4%28lca%29.cpp">
       <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PAT advance1016.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="first BFS.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PAT top1005%28hash%29.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="求先序排列.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="algorithm LCA%28tarjan%29.cpp">
+      <Filter>资源文件\Filter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
