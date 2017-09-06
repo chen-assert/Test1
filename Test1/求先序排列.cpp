@@ -21,7 +21,7 @@ tree *generate(int start, int end, tree *root, int target) {
 	main = (tree*)malloc(sizeof(tree));
 	*main = { root, NULL,NULL,beh[target] };
 	if (start == end)return main;
-	for (int i = 0;; i++) {
+	for (int i = start;i<=end; i++) {
 		if (mid[i] == beh[target]) {
 			local = i;
 			break;

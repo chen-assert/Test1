@@ -23,7 +23,6 @@ inline void flashnode(int n1, int n2) {
 int main() {
 	scanf("%d %d", &n, &m);
 	for (int i = 0; i < m; i++) {
-		//int t1, t2, t3;
 		scanf("%d %d %d", &edge[i].a, &edge[i].b, &edge[i].l);
 	}
 	sort(edge, edge + m, cmp);
@@ -36,7 +35,7 @@ int main() {
 		if (n1 != n2) {
 			sum += edge[i].l;
 			c++;
-			flashnode(n1, n2);
+			flashnode(n1, n2);//can be rewrite by union find
 		}
 		if (c == n)break;
 	}

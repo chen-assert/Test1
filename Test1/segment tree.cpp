@@ -11,14 +11,14 @@
 #define range0(i, e) for (int i = 0; i < int(e); i++)
 #define input_int(n) int n;scanf("%d",&n);
 using namespace std;
-static long long p=10000000;
+static long long p=10e9;
 struct segment_tree_node {
 	segment_tree_node* left;
 	segment_tree_node* right;
-	int begin;
-	int mid;
+	int begin;//左右边界
 	int end;
-	int size;
+	int mid;//这有什么用?
+	int size;//该节点大小
 	long long plus_delay_amount;
 	long long multi_delay_amount;
 	long long sum;

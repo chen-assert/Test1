@@ -33,9 +33,6 @@
     <ClCompile Include="tax and subsidy.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="simple 并查集.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="ACMrule.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -75,16 +72,10 @@
     <ClCompile Include="hex conversion.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="submatrix--backup.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="DFS-shortest path.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="最小生成树.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PAT top1001%28Kruskal%29.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="虫食算.cpp">
@@ -111,9 +102,6 @@
     <ClCompile Include="div.2 425 t4%28lca%29.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="PAT advance1016.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -129,6 +117,30 @@
     <ClCompile Include="algorithm LCA%28tarjan%29.cpp">
       <Filter>资源文件\Filter</Filter>
     </ClCompile>
+    <ClCompile Include="PAT top1006.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dijkstra.cpp">
+      <Filter>资源文件\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="submatrix.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="kmp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="simple union-find%28并查集%29.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PAT top1001%28Kruskal%29%28bad%29.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="poj3723 %28kruskal+union-find%29.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -138,6 +150,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="segment tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\TOF\MobileFile\[模板]高精度运算\BigInteger.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

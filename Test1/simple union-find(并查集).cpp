@@ -7,20 +7,29 @@ using namespace std;
 
 long long Q[150001];
 int n, m;
-int parent[150001];
+int *parent = NULL;
+void init_union(int n) {
+	if (parent != NULL) {
+		delete[] parent;
+		parent = NULL;
+	}
+	parent = new int[n];
+	for (int i = 0; i < n; i++) {
+		parent[i] = i;
+	}
+}
 int find(int i) {
 	if (parent[i] == i)return i;
 	else return parent[i]=find(parent[i]);
 }
 void merge(int a1,int a2) {
-	//parent[a1]=find(a2);
-	parent[a1] = parent[a2];
-}
+	int b1 = find(a1);
+	int b2 = find(a2);
+	parent[b1] = parent[b2];
+}//it may be slow
 int main() {
 	scanf("%d %d", &n, &m);
-	for (int i = 1; i <= n; i++) {
-		parent[i] = i;
-	}
+	init_union(n + 1);
 	int a1, a2;
 	for (int i = 1; i <= m; i++) {
 		scanf("%d %d", &a1, &a2);

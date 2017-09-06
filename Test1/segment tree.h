@@ -11,3 +11,5 @@ int update_multiply(int begin, int end, long long mul, segment_tree_node * opera
 int update_plus(int begin, int end, long long plus, segment_tree_node * operated_node);
 
 void modify_mod(long long t);
+
+//为什么没注释!自己都看不懂了!
