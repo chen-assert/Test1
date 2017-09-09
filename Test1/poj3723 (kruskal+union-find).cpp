@@ -41,7 +41,7 @@ void init_union(int n) {
 	}
 	parent = new int[n];
 	rank_ = new int[n];
-	range0(i, n) {
+	range0(i, n+1) {
 		parent[i] = i;
 		rank_[i] = 0;
 	}

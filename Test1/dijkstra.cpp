@@ -35,7 +35,7 @@ int maxdis[10010];
 int n, m, s;
 vector <edge> go[10010];
 priority_queue<node> que;
-void dijkstra() {
+void dijkstra(int s) {//ÇóÄãÐ´¸ö×¢ÊÍ
 	node t3;
 	t3.dis = 0;
 	t3.num = s;
@@ -71,7 +71,7 @@ int main() {
 		go[f].push_back(t);
 		//if (f == s)maxdis[g] = min(maxdis[g], w);
 	}
-	dijkstra();
+	dijkstra(s);
 	range(i, 1, n + 1) {
 		printf("%d ", maxdis[i]);
 	}
