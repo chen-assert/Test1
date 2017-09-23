@@ -33,9 +33,6 @@
     <ClCompile Include="tax and subsidy.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ACMrule.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="binarytree.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -126,9 +123,6 @@
     <ClCompile Include="submatrix.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="kmp.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="simple union-find%28并查集%29.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -136,6 +130,15 @@
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="poj3723 %28kruskal+union-find%29.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="I.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Friendship Theorem.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="源.cpp">
