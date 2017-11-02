@@ -31,7 +31,7 @@ void qsort(int *N, int s, int e) {//array,start,end
 		return;
 	}
 	int r = (int)(rand() % (e + 1 - s)) + s;//random base point
-											//printf("%s = %d%s", "rand = ", r, " ");
+	//printf("%s = %d%s", "rand = ", r, " ");
 	swap(N[s], N[r]);
 	int b = N[s];
 	int rs = e;//right search 

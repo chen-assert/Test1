@@ -22,27 +22,37 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<int, int> P;
-struct W {
-	int s;
-	int e;
-	bool friend operator<(W a,W b){
-		return a.e < b.e;
-	}
-}w[100010];
-int main(){
+ll p[200010];
+struct NODE {
+	int sum;
+	int N1;
+	int N2;
+	int N3;
+	int NL;
+};
+NODE node[500010];
+int main() {
 	input_int(n);
-	range0(i, n) {
-		scanf("%d %d", &w[i].s, &w[i].e);
+	priority_queue<ll, vector<ll>, greater<ll>> que;
+	range(i, 1, n + 1) {
+		scanf("%lld", &p[i]);
+		que.push(p[i]);
 	}
-	sort(w, w + n);
-	int t = 0;
-	int sum = 0;
-	//printf("%d", INF2);
-	for (int i = 0; i < n; i++) {
-		if (t < w[i].s) {
-			sum++;
-			t = w[i].e;
-		}
+	int num = 1;
+	while (que.size() > 2) {
+		ll t = que.top();
+		node[num++].sum = que.top();
+		que.pop();
+		t += que.top();
+		node[num++].sum = que.top();
+		que.pop();
+		t += que.top();
+		node[num++].sum = que.top();
+		que.pop();
+		que.push(t);
 	}
-	printf("%d", sum);
+	if (que.size() == 2) {
+
+	}
+
 }

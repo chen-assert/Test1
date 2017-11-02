@@ -22,27 +22,39 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<int, int> P;
-struct W {
-	int s;
-	int e;
-	bool friend operator<(W a,W b){
-		return a.e < b.e;
-	}
-}w[100010];
-int main(){
-	input_int(n);
-	range0(i, n) {
-		scanf("%d %d", &w[i].s, &w[i].e);
-	}
-	sort(w, w + n);
-	int t = 0;
-	int sum = 0;
-	//printf("%d", INF2);
-	for (int i = 0; i < n; i++) {
-		if (t < w[i].s) {
-			sum++;
-			t = w[i].e;
+char dat[2010];
+int cmp(int s, int e) {
+	while (s <= e) {
+		if (dat[s] == dat[e]) {
+			s++;
+			e--;
+		}
+		else {
+			return dat[s] - dat[e];
 		}
 	}
-	printf("%d", sum);
+	return 0;
+}
+int main() {
+	input_int(n);
+	range0(i, n) {
+		while (dat[i] == 0 || dat[i] == '\n' || dat[i]==' ') {
+			scanf("%c", &dat[i]);
+		}
+	}
+	int s = 0, e = n - 1;
+	int rec = 0;
+	while (s<=e) {
+		if (rec % 80 == 0 && rec!=0)printf("\n");
+		if (cmp(s,e)<0) {
+			printf("%c", dat[s]);
+			s++;
+
+		}
+		else {
+			printf("%c", dat[e]);
+			e --;
+		}
+			rec++;
+	}
 }

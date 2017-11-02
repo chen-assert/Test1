@@ -22,27 +22,24 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<int, int> P;
-struct W {
-	int s;
-	int e;
-	bool friend operator<(W a,W b){
-		return a.e < b.e;
-	}
-}w[100010];
-int main(){
+int num[10][10];
+int dp[22][11][11];
+int main() {
 	input_int(n);
-	range0(i, n) {
-		scanf("%d %d", &w[i].s, &w[i].e);
-	}
-	sort(w, w + n);
-	int t = 0;
-	int sum = 0;
-	//printf("%d", INF2);
-	for (int i = 0; i < n; i++) {
-		if (t < w[i].s) {
-			sum++;
-			t = w[i].e;
+	int x, y, z;
+	do {
+		scanf("%d %d %d", &x, &y, &z);
+		num[x][y] = z;
+	} while (x != 0 || y != 0 || z != 0);
+	int sum = num[1][1]+num[n][n];
+	for (int step = 1; step <= (n - 1) * 2-1; step++) {
+		//保证路径不重叠
+		for (int x1 = max(2,step-n+3); x1 <=min(n,1+step) ; x1++) {//向右
+			for (int x2 = max(1,step-n+2); x2 <= x1-1; x2++) {//向下
+				dp[step][x1][x2] = max(max(dp[step-1][x1][x2],dp[step-1][x1][x2-1]),max(dp[step-1][x1-1][x2],dp[step-1][x1-1][x2-1]))+num[x1][step-x1+2]+num[x2][step-x2+2];
+			}
 		}
 	}
+	sum += dp[(n-1)*2-1][n][n-1];
 	printf("%d", sum);
 }
