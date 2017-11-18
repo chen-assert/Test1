@@ -138,22 +138,10 @@
     <ClCompile Include="luoguo P1004.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="w1q1%28Lake_Counting_Test%29.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="w1q2%28Maze_Test%29.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="poj4031 fail.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="cf match.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="w2q2%28poj3069%29.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="w2q1%28poj3617%29.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="源.cpp">
