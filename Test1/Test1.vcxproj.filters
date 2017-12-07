@@ -123,9 +123,6 @@
     <ClCompile Include="submatrix.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="simple union-find%28并查集%29.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="PAT top1001%28Kruskal%29%28bad%29.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -141,8 +138,8 @@
     <ClCompile Include="poj4031 fail.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="cf match.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="union find.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
@@ -162,6 +159,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="resource1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="union find.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

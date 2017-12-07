@@ -5,8 +5,6 @@
 #include<time.h>
 #include<iostream>
 #include<functional>
-#include<vector>
-#include<queue>
 //#include<windows.h>
 #define range(i, s, e) for (int i = (s); i < int(e); i++)
 #define range0(i, e) for (int i = 0; i < int(e); i++)
@@ -25,33 +23,39 @@ inline void read(int &x) {//only read int
 	for (c = getchar(); !('0' <= c&&c <= '9'); c = getchar());
 	for (x = 0; '0' <= c&&c <= '9'; x = x * 10 + c - 48, c = getchar());
 }
-struct point {
-	int x;
-	int y;
-	point(int x, int y) {
-		this->x = x;
-		this->y = y;
+int *parent = NULL;
+void init_union(int n) {
+	if (parent != NULL) {
+		delete[] parent;
+		parent = NULL;
 	}
-	point() {
-
+	parent = new int[n + 1];
+	for (int i = 0; i <= n + 1; i++) {
+		parent[i] = i;
 	}
-};
-int main() {
+}
+int find(int i) {
+	if (parent[i] == i)return i;
+	else return parent[i] = find(parent[i]);
+}
+void merge(int a1, int a2) {
+	//int b1 = find(a1);
+	//int b2 = find(a2);
+	//parent[b1]=parent[b2];
+	parent[find(a1)] = parent[find(a2)];
+}
+/*int main() {
 	int n, m;
-	read(n);
-	read(m);
-	int **array = new int *[n + 1];
-	for (int i = 0; i <= n; i++) {
-		array[n] = new int[m + 1];
-	}
-	for (int i = 1; i < +n; i++) {
-		for (int o = 1; o < +m; o++) {
-			scanf("%d", &array[i][o]);
+	scanf("%d %d", &n, &m);
+	init_union(n);
+	int z, x, y;
+	for (int i = 1; i <= m; i++) {
+		read(z); read(x); read(y);
+		if (z == 1) {
+			merge(x, y);
+		}
+		else {
+			printf(find(x) == find(y) ? "Y\n" : "N\n");
 		}
 	}
-	point start, end;
-	scanf("%d %d %d %d", &start.x,&start.y,&end.x,&end.y);
-	char direction;
-	scanf("%c", direction);
-
-}
+}*/
