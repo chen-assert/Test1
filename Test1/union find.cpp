@@ -34,15 +34,15 @@ void init_union(int n) {
 		parent[i] = i;
 	}
 }
-int find(int i) {
+int find_(int i) {
 	if (parent[i] == i)return i;
-	else return parent[i] = find(parent[i]);
+	else return parent[i] = find_(parent[i]);
 }
 void merge(int a1, int a2) {
 	//int b1 = find(a1);
 	//int b2 = find(a2);
 	//parent[b1]=parent[b2];
-	parent[find(a1)] = parent[find(a2)];
+	parent[find_(a1)] = parent[find_(a2)];
 }
 /*int main() {
 	int n, m;

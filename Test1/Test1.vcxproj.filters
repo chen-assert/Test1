@@ -135,11 +135,14 @@
     <ClCompile Include="luoguo P1004.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="poj4031 fail.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="union find.cpp">
       <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2017蓝桥杯预选赛-赛.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="L2-001.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
