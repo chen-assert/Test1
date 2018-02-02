@@ -5,8 +5,8 @@
 #include<math.h>
 #include<cstring>
 #include<time.h>
-#define _MAX 10000012
 using namespace std;
+#define _MAX 10000012
 int n, m;
 bool record[_MAX];//save whether this is a prime
 int primes[_MAX];//save the prime list

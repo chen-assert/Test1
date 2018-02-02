@@ -90,14 +90,8 @@
     <ClCompile Include="segment tree.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="div.2 427 t4.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="primejudge.cpp">
       <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="div.2 425 t4%28lca%29.cpp">
-      <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="PAT advance1016.cpp">
       <Filter>资源文件</Filter>
@@ -144,8 +138,11 @@
     <ClCompile Include="L2-001.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源.cpp">
+    <ClCompile Include="div.2 460 t4%28DFS+DP%29.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="div.2 427 t4%28LCA%29.cpp">
+      <Filter>资源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

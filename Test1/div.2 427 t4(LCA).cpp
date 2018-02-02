@@ -100,6 +100,6 @@ int main() {
 		int t = ans[3 * i + 3] + dif;
 		t /= 2;
 		int a = ans[3 * i + 5] - t;
-		printf("%d\n", a+1);
+		printf("%d\n", a + 1);
 	}
 }
