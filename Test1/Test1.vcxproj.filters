@@ -135,20 +135,26 @@
     <ClCompile Include="2017蓝桥杯预选赛-赛.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="L2-001.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="div.2 460 t4%28DFS+DP%29.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="div.2 427 t4%28LCA%29.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="L2-001.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="div.2 460 t4%28DFS+DP%29.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="L3-002.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="next_permutation.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -156,9 +162,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\TOF\MobileFile\[模板]高精度运算\BigInteger.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="resource1.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="union find.h">
