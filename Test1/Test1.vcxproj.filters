@@ -150,7 +150,16 @@
     <ClCompile Include="next_permutation.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="calender.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="save.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="save2_bjutoj.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

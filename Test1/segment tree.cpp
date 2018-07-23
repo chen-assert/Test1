@@ -25,7 +25,7 @@ struct segment_tree_node {
 	long long sum;
 };
 segment_tree_node* create_segment_tree(int begin, int end,long long array[]) {
-	segment_tree_node *operated_node = (segment_tree_node*)malloc(sizeof(segment_tree_node));
+	segment_tree_node *operated_node = (segment_tree_node*)(sizeof(segment_tree_node));
 	memset(operated_node, 0, sizeof(segment_tree_node));
 	operated_node->begin = begin;
 	operated_node->mid = (begin + end) / 2;

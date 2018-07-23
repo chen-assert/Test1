@@ -12,9 +12,9 @@
 #define input_int(n) int n;scanf("%d",&n);
 using namespace std;
 int next_[1100000];
+int _next[256];
 int finder_len;
 char str[1100000];
-int _next[256];
 void GetNext(char *start)
 {
 	int len = finder_len;//get the length  
@@ -76,6 +76,7 @@ void kmp_get_next(char *start) {//next[0]恒为0 and next[1]表示第一个字符的匹配值
 	}
 }
 int kmp(char *str,char *pattern,int strlen,int patternlen) {
+	//pattern 是要匹配的字符串
 	kmp_get_next(pattern);
 	int sum = 0;//本次计算的模式匹配次数
 	int t = 0;

@@ -1,6 +1,7 @@
 struct segment_tree_node;
 
 segment_tree_node * create_segment_tree(int begin, int end, long long s[]);//包含begin和end元素
+//s数组储存着要放入线段树中的数据
 
 int push_delay(segment_tree_node * operated_node);
 
