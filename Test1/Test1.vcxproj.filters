@@ -33,9 +33,6 @@
     <ClCompile Include="tax and subsidy.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="binarytree.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="factorial.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -46,9 +43,6 @@
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="swiss wheel.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="State compression？.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="minimum connection.cpp">
@@ -70,9 +64,6 @@
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="DFS-shortest path.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="最小生成树.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="虫食算.cpp">
@@ -102,9 +93,6 @@
     <ClCompile Include="PAT top1005%28hash%29.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="求先序排列.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="algorithm LCA%28tarjan%29.cpp">
       <Filter>资源文件\Filter</Filter>
     </ClCompile>
@@ -132,9 +120,6 @@
     <ClCompile Include="union find.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="2017蓝桥杯预选赛-赛.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="div.2 427 t4%28LCA%29.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -161,6 +146,18 @@
     </ClCompile>
     <ClCompile Include="save2_bjutoj.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="minimum spanning tree.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="State compression_.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="binary tree.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="find preorder.cpp">
+      <Filter>资源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
