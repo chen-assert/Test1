@@ -30,6 +30,19 @@ void pre_treat(int n) {
 	}
 	primes[num++] = n + 100;
 }
+void pre_treat(int n) {
+	n++;
+	record = new bool[n] {};
+	//memset(record, 0, sizeof(bool)*n);
+	record[0] = record[1] = 1;
+	for (int i = 2; i <= n / 2 + 1; i++) {
+		if (record[i] == 1) continue;
+		for (int o = i * 2; o < n; o += i) {
+			record[o] = 1;
+		}
+	}
+}
+
 int main() {
 	scanf("%d %d", &n, &m);
 	pre_treat(n);

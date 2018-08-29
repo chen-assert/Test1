@@ -141,12 +141,6 @@
     <ClCompile Include="save.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="save2_bjutoj.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="minimum spanning tree.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -159,6 +153,12 @@
     <ClCompile Include="find preorder.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="poj2991 fail.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -167,11 +167,11 @@
     <ClInclude Include="segment tree.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\TOF\MobileFile\[模板]高精度运算\BigInteger.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="union find.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

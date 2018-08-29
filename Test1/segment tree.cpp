@@ -7,9 +7,9 @@
 #include<time.h>
 #include<stack>
 #include "segment tree.h"
-#define range(i, s, e) for (int i = s; i < int(e); i++)
-#define range0(i, e) for (int i = 0; i < int(e); i++)
-#define input_int(n) int n;scanf("%d",&n);
+//#define range(i, s, e) for (int i = s; i < int(e); i++)
+//#define range0(i, e) for (int i = 0; i < int(e); i++)
+//#define input_int(n) int n;scanf("%d",&n);
 using namespace std;
 static long long p=10e9;
 //p是求余用的
@@ -18,18 +18,20 @@ struct segment_tree_node {
 	segment_tree_node* right;
 	int begin;//左右边界
 	int end;
-	int mid;//这有什么用?
+	int mid;
 	int size;//该节点大小
 	long long plus_delay_amount;
 	long long multi_delay_amount;
 	long long sum;
 };
 segment_tree_node* create_segment_tree(int begin, int end,long long array[]) {
-	segment_tree_node *operated_node = (segment_tree_node*)(sizeof(segment_tree_node));
+	segment_tree_node *operated_node = (segment_tree_node*)malloc(sizeof(segment_tree_node));
+	//多次malloc会显著降低速度并大幅增加内存占用
+	//懒得改了
 	memset(operated_node, 0, sizeof(segment_tree_node));
 	operated_node->begin = begin;
-	operated_node->mid = (begin + end) / 2;
 	operated_node->end = end;
+	operated_node->mid = (begin + end) / 2;
 	operated_node->size = end - begin + 1;
 	operated_node->plus_delay_amount = 0;
 	operated_node->multi_delay_amount = 1;

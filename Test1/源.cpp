@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h> 
 #include<algorithm>
 #include<limits.h>
 #include<time.h>
@@ -8,7 +9,7 @@
 #include<queue>
 #include<string.h>
 #include<stack>
-#include<string>
+//#include"segment tree.h"
 //#include<regex>
 //#include<windows.h>
 using namespace std;
@@ -28,45 +29,113 @@ inline void read(int &x) {//only read int
 	for (c = getchar(); !('0' <= c && c <= '9'); c = getchar());
 	for (x = 0; '0' <= c && c <= '9'; x = x * 10 + c - 48, c = getchar());
 }
-struct NODE {
-	char mode;
-	NODE* left;
-	NODE* right;
-};
-struct str
+int BigRand()
 {
-	int sum;
-	int seq;
-	int n;
+	return RAND_MAX * rand() + rand();
+}
+struct node {
+	int x, y, v, num;
 };
+
+int n;
+bool cmp(node a, node b) {
+	if (a.y != b.y)return a.y < b.y;
+	else return a.x > b.x;
+}
+struct segment_tree_node {
+	segment_tree_node* left;
+	segment_tree_node* right;
+	int begin;//左右边界
+	int end;
+	int mid;
+	int size;//该节点大小
+	int max;
+	segment_tree_node* parent;
+};
+int search(int begin, int end, segment_tree_node *operated_node) {
+	if (operated_node->end < begin || operated_node->begin > end) {
+		return 0;
+	}
+	else if (operated_node->begin >= begin && operated_node->end <= end) {
+		return operated_node->max;
+	}
+	else {
+		return max(search(begin, end, operated_node->left), search(begin, end, operated_node->right));
+	}
+}
+int update(int point, int num, segment_tree_node *operated_node) {
+	if (operated_node->begin >= point && operated_node->end <= point) {
+		operated_node->max = num;
+	}
+	else {
+		if (operated_node->left->end >= point)
+			update(point, num, operated_node->left);
+		if (operated_node->right->begin <= point)
+			update(point, num, operated_node->right);
+		operated_node->max = max(operated_node->left->max, operated_node->right->max);
+	}
+	return 0;
+}
+segment_tree_node* create_segment_tree(int begin, int end) {
+	segment_tree_node *operated_node = (segment_tree_node*)malloc(sizeof(segment_tree_node));
+	//多次malloc会显著降低速度并大幅增加内存占用
+	memset(operated_node, 0, sizeof(segment_tree_node));
+	//operated_node->parent;
+	operated_node->begin = begin;
+	operated_node->end = end;
+	operated_node->mid = (begin + end) / 2;
+	operated_node->size = end - begin + 1;
+	if (begin == end)operated_node->max = 0;
+	else {
+		operated_node->left = create_segment_tree(begin, operated_node->mid);
+		operated_node->right = create_segment_tree(operated_node->mid + 1, end);
+		operated_node->max = max(operated_node->left->max, operated_node->right->max);
+	}
+	return operated_node;
+}
+void free_segment_tree(segment_tree_node *operated_node) {
+	if (operated_node->left != NULL)free_segment_tree(operated_node->left);
+	if (operated_node->right != NULL)free_segment_tree(operated_node->right);
+	free(operated_node);
+}
+segment_tree_node *sroot;
+node vill[100010];
+void dp(int point) {
+	int fj = search(0,vill[point].x-1,sroot);
+	if (fj + vill[point].v > search(vill[point].x, vill[point].x, sroot)) {
+		update(vill[point].x,fj + vill[point].v, sroot);
+	}
+}
+void disperse(node *v) {
+	vector<int>xx, yy;
+	range0(i, n) {
+		xx.push_back(v[i].x);
+		yy.push_back(v[i].y);
+
+	}
+	sort(xx.begin(), xx.end());
+	sort(yy.begin(), yy.end());
+	xx.erase(unique(xx.begin(), xx.end()), xx.end());
+	yy.erase(unique(yy.begin(), yy.end()), yy.end());
+	range0(i, n) {
+		v[i].x = lower_bound(xx.begin(), xx.end(), v[i].x) - xx.begin();
+		v[i].y = lower_bound(yy.begin(), yy.end(), v[i].y) - yy.begin();
+	}
+}
 int main() {
-	vector<str> vec;
-	input_int(k);
-	range0(i, k) {
-		int t[200010];
-		input_int(n);
-		int sum = 0;
-		range0(o, n) {
-			scanf("%d", &t[o]);
-			sum += t[o];
+	input_int(t);
+	range0(u, t) {
+		scanf("%d", &n);
+		range0(i, n) {
+			scanf("%d %d %d", &vill[i].x, &vill[i].y, &vill[i].v);
 		}
-		range0(o, n) {
-			vec.push_back({ sum-t[o], i, o });
+		disperse(vill);
+		sroot = create_segment_tree(0, n+10);
+		sort(vill, vill + n, cmp);
+		range0(i, n) {
+			dp(i);
 		}
+		printf("%d\n", sroot->max);
+		free_segment_tree(sroot);
 	}
-	sort(vec.begin(), vec.end(), [&](const str &a, const str &b) {
-		return a.sum < b.sum; }
-	);
-	int len = vec.size();
-	for (int i = 0; i < len-1; i++) {
-		if (vec[i].sum == vec[i + 1].sum) {
-			if (vec[i].seq == vec[i + 1].seq) {
-				continue;
-			}
-			printf("YES\n");
-			printf("%d %d\n%d %d", vec[i].seq+1, vec[i].n+1, vec[i+1].seq+1, vec[i+1].n+1);
-			return 0;
-		}
-	}
-	printf("NO");
 }
