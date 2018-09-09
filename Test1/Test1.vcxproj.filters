@@ -138,9 +138,6 @@
     <ClCompile Include="calender.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="save.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="minimum spanning tree.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -154,6 +151,18 @@
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="poj2991 fail.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ICPCnanjing-J.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCPC1010.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ICPCnanjing-E-fail.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ICPCshenyang-I.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="源.cpp">

@@ -24,118 +24,93 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<int, int> P;
-inline void read(int &x) {//only read int
+/*inline void read(int &x) {//only read int
+	static char c;
+	for (c = getchar(); !('0' <= c && c <= '9'); c = getchar());
+	for (x = 0; '0' <= c && c <= '9'; x = x * 10 + c - 48, c = getchar());
+}*/
+inline void read2(short &x) {//only read int
 	static char c;
 	for (c = getchar(); !('0' <= c && c <= '9'); c = getchar());
 	for (x = 0; '0' <= c && c <= '9'; x = x * 10 + c - 48, c = getchar());
 }
+/*
 int BigRand()
 {
 	return RAND_MAX * rand() + rand();
 }
-struct node {
-	int x, y, v, num;
+*/
+struct edge {
+	short to, cost;
 };
-
-int n;
-bool cmp(node a, node b) {
-	if (a.y != b.y)return a.y < b.y;
-	else return a.x > b.x;
-}
-struct segment_tree_node {
-	segment_tree_node* left;
-	segment_tree_node* right;
-	int begin;//左右边界
-	int end;
-	int mid;
-	int size;//该节点大小
-	int max;
-	segment_tree_node* parent;
-};
-int search(int begin, int end, segment_tree_node *operated_node) {
-	if (operated_node->end < begin || operated_node->begin > end) {
-		return 0;
+int n, m;
+int s, e, k, t;
+vector<edge> graph[1001];
+vector<int> dist[1001];     //最短距离
+//第一维-位置 第二维-k
+int d, v;
+inline void solve() {
+	for (register int i = 0; i != n + 1; i++) {
+		dist[i].resize(k+1);
+		//memset(dist[i], INF, sizeof(int)*(k + 1));
+		fill(&dist[i][0], &dist[i][0] + k + 1, t + 1);
 	}
-	else if (operated_node->begin >= begin && operated_node->end <= end) {
-		return operated_node->max;
+	priority_queue<P, vector<P>, greater<P> > que;
+	dist[s - 1][0] = 0;
+	//只需要设定初始点的最短路  次短路及以上保持不变
+	que.push(P(0, s - 1));
+	//first-距离 second-当前位置
+	P p;
+	int d2;
+	int len;
+	while (!que.empty()) {
+		p = que.top(); que.pop();
+		//d = p.first;
+		//v = p.second;
+		if (dist[p.second][k - 1] < p.first) continue;
+		len = graph[p.second].size();
+		for (register int i = 0; i < len; i++) {
+			edge &e = graph[p.second][i];
+			d2 = p.first + e.cost;
+			int *p = upper_bound(&dist[e.to][0], &dist[e.to][0] + k, d2);
+			//第一个大于d2的数
+			for (register int *np = &dist[e.to][0] + k-1;np>p; np--) {
+				*np = *(np - 1);
+				que.push(P(*(np), e.to));
+			}
+			if(p< &dist[e.to][0] + k )*p = d2;
+			que.push(P(d2, e.to));
+			/*if (dist[e.to][0] > d2) {
+				swap(dist[e.to][0], d2);
+				que.push(P(dist[e.to][0], e.to));
+			}
+			for (int i = 1; i < k; i++) {
+				if (dist[e.to][i] > d2 && dist[v][i - 1] < d2) {
+					swap(dist[e.to][i], d2);
+					que.push(P(dist[e.to][i], e.to));
+				}
+			}*/
+		}
+	}
+	if (dist[e - 1][k - 1] <= t) {
+		printf("yareyaredawa\n");
 	}
 	else {
-		return max(search(begin, end, operated_node->left), search(begin, end, operated_node->right));
-	}
-}
-int update(int point, int num, segment_tree_node *operated_node) {
-	if (operated_node->begin >= point && operated_node->end <= point) {
-		operated_node->max = num;
-	}
-	else {
-		if (operated_node->left->end >= point)
-			update(point, num, operated_node->left);
-		if (operated_node->right->begin <= point)
-			update(point, num, operated_node->right);
-		operated_node->max = max(operated_node->left->max, operated_node->right->max);
-	}
-	return 0;
-}
-segment_tree_node* create_segment_tree(int begin, int end) {
-	segment_tree_node *operated_node = (segment_tree_node*)malloc(sizeof(segment_tree_node));
-	//多次malloc会显著降低速度并大幅增加内存占用
-	memset(operated_node, 0, sizeof(segment_tree_node));
-	//operated_node->parent;
-	operated_node->begin = begin;
-	operated_node->end = end;
-	operated_node->mid = (begin + end) / 2;
-	operated_node->size = end - begin + 1;
-	if (begin == end)operated_node->max = 0;
-	else {
-		operated_node->left = create_segment_tree(begin, operated_node->mid);
-		operated_node->right = create_segment_tree(operated_node->mid + 1, end);
-		operated_node->max = max(operated_node->left->max, operated_node->right->max);
-	}
-	return operated_node;
-}
-void free_segment_tree(segment_tree_node *operated_node) {
-	if (operated_node->left != NULL)free_segment_tree(operated_node->left);
-	if (operated_node->right != NULL)free_segment_tree(operated_node->right);
-	free(operated_node);
-}
-segment_tree_node *sroot;
-node vill[100010];
-void dp(int point) {
-	int fj = search(0,vill[point].x-1,sroot);
-	if (fj + vill[point].v > search(vill[point].x, vill[point].x, sroot)) {
-		update(vill[point].x,fj + vill[point].v, sroot);
-	}
-}
-void disperse(node *v) {
-	vector<int>xx, yy;
-	range0(i, n) {
-		xx.push_back(v[i].x);
-		yy.push_back(v[i].y);
-
-	}
-	sort(xx.begin(), xx.end());
-	sort(yy.begin(), yy.end());
-	xx.erase(unique(xx.begin(), xx.end()), xx.end());
-	yy.erase(unique(yy.begin(), yy.end()), yy.end());
-	range0(i, n) {
-		v[i].x = lower_bound(xx.begin(), xx.end(), v[i].x) - xx.begin();
-		v[i].y = lower_bound(yy.begin(), yy.end(), v[i].y) - yy.begin();
+		printf("Whitesnake!\n");
 	}
 }
 int main() {
-	input_int(t);
-	range0(u, t) {
-		scanf("%d", &n);
-		range0(i, n) {
-			scanf("%d %d %d", &vill[i].x, &vill[i].y, &vill[i].v);
+	while (~scanf("%d %d", &n, &m)) {
+		scanf("%d %d %d %d", &s, &e, &k, &t);
+		for (register int i = 0; i!=m; ++i) {
+			short u, v, w;
+			read2(u);
+			read2(v);
+			read2(w);
+			//scanf("%d %d %d", &u, &v, &w);
+			graph[u - 1].push_back({ v - 1, w });
 		}
-		disperse(vill);
-		sroot = create_segment_tree(0, n+10);
-		sort(vill, vill + n, cmp);
-		range0(i, n) {
-			dp(i);
-		}
-		printf("%d\n", sroot->max);
-		free_segment_tree(sroot);
+		solve();
+		range0(i, n)graph[i].clear();
 	}
 }

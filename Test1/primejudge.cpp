@@ -12,8 +12,6 @@ int *primes;//save the prime list
 int num = 0;
 void pre_treat(int n) {
 	//欧拉筛法
-	//是我自己写的吗?
-	//已经看不懂了
 	n += 10;
 	record = new bool[n];
 	primes = new int[n];
@@ -28,12 +26,14 @@ void pre_treat(int n) {
 			//what????
 		}
 	}
-	primes[num++] = n + 100;
+	//primes[num++] = n + 100;
+	//这句是干吗的?
 }
-void pre_treat(int n) {
+
+//埃氏筛
+void pre_treat2(int n) {
 	n++;
 	record = new bool[n] {};
-	//memset(record, 0, sizeof(bool)*n);
 	record[0] = record[1] = 1;
 	for (int i = 2; i <= n / 2 + 1; i++) {
 		if (record[i] == 1) continue;
