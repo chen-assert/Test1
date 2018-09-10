@@ -11,7 +11,7 @@
 //#define range0(i, e) for (int i = 0; i < int(e); i++)
 //#define input_int(n) int n;scanf("%d",&n);
 using namespace std;
-static long long p=10e9;
+static long long p = 10e9;
 //p是求余用的
 struct segment_tree_node {
 	segment_tree_node* left;
@@ -24,21 +24,22 @@ struct segment_tree_node {
 	long long multi_delay_amount;
 	long long sum;
 };
-segment_tree_node* create_segment_tree(int begin, int end,long long array[]) {
+segment_tree_node* create_segment_tree(int begin, int end, long long array[]) {
 	segment_tree_node *operated_node = (segment_tree_node*)malloc(sizeof(segment_tree_node));
 	//多次malloc会显著降低速度并大幅增加内存占用
-	//懒得改了
+	//TODO
 	memset(operated_node, 0, sizeof(segment_tree_node));
 	operated_node->begin = begin;
 	operated_node->end = end;
 	operated_node->mid = (begin + end) / 2;
+	//mid这点属于左半边
 	operated_node->size = end - begin + 1;
 	operated_node->plus_delay_amount = 0;
 	operated_node->multi_delay_amount = 1;
-	if (begin == end)operated_node->sum =array[begin];
+	if (begin == end)operated_node->sum = array[begin];
 	else {
-		operated_node->left = create_segment_tree(begin, operated_node->mid,array);
-		operated_node->right = create_segment_tree(operated_node->mid + 1, end,array);
+		operated_node->left = create_segment_tree(begin, operated_node->mid, array);
+		operated_node->right = create_segment_tree(operated_node->mid + 1, end, array);
 		operated_node->sum = operated_node->left->sum + operated_node->right->sum;
 	}
 	return operated_node;
@@ -51,7 +52,7 @@ int push_delay(segment_tree_node *operated_node) {
 		left_node->sum %= p;
 		left_node->sum += (operated_node->plus_delay_amount)*left_node->size;
 		left_node->sum %= p;
-		left_node->plus_delay_amount*= operated_node->multi_delay_amount;
+		left_node->plus_delay_amount *= operated_node->multi_delay_amount;
 		left_node->plus_delay_amount %= p;
 		left_node->plus_delay_amount += operated_node->plus_delay_amount;
 		left_node->plus_delay_amount %= p;
@@ -126,4 +127,10 @@ int update_plus(int begin, int end, long long plus, segment_tree_node *operated_
 }
 void modify_mod(long long t) {
 	p = t;
+}
+
+void free_segment_tree(segment_tree_node *operated_node) {
+	if (operated_node->left != NULL)free_segment_tree(operated_node->left);
+	if (operated_node->right != NULL)free_segment_tree(operated_node->right);
+	free(operated_node);
 }

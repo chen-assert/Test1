@@ -9,6 +9,7 @@
 #include<queue>
 #include<string.h>
 #include<stack>
+#include <set>
 //#include"segment tree.h"
 //#include<regex>
 //#include<windows.h>
@@ -24,6 +25,7 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<int, int> P;
+typedef pair<ll, ll> llP;
 inline void read(int &x) {//only read int
 	static char c;
 	for (c = getchar(); !('0' <= c && c <= '9'); c = getchar());
@@ -33,50 +35,44 @@ int BigRand()
 {
 	return RAND_MAX * rand() + rand();
 }
-struct node {
-	int x, y, v, num;
-};
-bool *record;
-int sfi2[12500000];
-int sfinum = 0;
-void pre_treat2(int n) {
-	n += 10;
-	record = new bool[n];
-	memset(record, 0, sizeof(bool)*n);
-	for (int i = 2; i < 5000; i++) {
-		for (int o = 1; o*i*i < n; o++) {
-			record[o*i*i] = 1;
+struct TRACE
+{
+	ll x;
+	ll y;
+	bool operator<(const struct TRACE & right)const   //ÖØÔØ<ÔËËã·û
+	{
+		if (this->y != right.y)
+			return this->y > right.y;
+		else
+		{
+			return this->x < right.x;
 		}
-		//printf("%d\n", i);
 	}
-
-	for (int i = 1; i < n; i++) {
-		//if (record[i] == 0)sfi.push_back(i);
-		if (record[i] == 0)sfi2[sfinum++] = i;
-	}
-	return;
+}trace[50010];
+set<TRACE> save;
+ll check(int x, int y) {
+	TRACE n = { x,y };
+	std::set<TRACE>::iterator itl, itr;
+	itl = itr = save.upper_bound(n);
+	itl--;
+	ll r = 0;
+	r += n.x - ((*itl).x);
+	r += n.y - ((*itr).y);
+	return r;
 }
-int sum[(int)2e7 + 10];
-ll summ[(int)2e7 + 10];
 int main() {
-	pre_treat2(2e7);
-	input_int(t);
-	int len = sfinum;
-	for (register int i = 0; i < 5000; i++) {
-		for (register int o = i;; o++) {
-			int t = sfi2[i] * sfi2[o];
-			if (t > (int)2e7)break;
-			if (i == o)sum[t]++;
-			else sum[t] += 2;
-		}
+	ll sum = 0;
+	input_int(n);
+
+	save.insert({ 20000010,0 });
+	save.insert({ 0, 20000010 });
+	range0(i, n) {
+		input_int2(x, y);
+		trace[i] = { x,y };
 	}
-	summ[0] = sum[0];
-	for (int i = 1; i <= (int)2e7; i++) {
-		summ[i] = sum[i] + summ[i - 1];
+	for (int i = n - 1; i>=0; i --) {
+		sum += check(trace[i].x, trace[i].y);
+		save.insert({ trace[i].x,trace[i].y });
 	}
-	range0(i, t) {
-		input_int(n);
-		printf("%lld\n", summ[n]);
-	}
-	return 0;
+	printf("%lld", sum);
 }
