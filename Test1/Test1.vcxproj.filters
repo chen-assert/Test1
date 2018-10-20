@@ -165,14 +165,41 @@
     <ClCompile Include="CCPC1010.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="源1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="using set.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="ICPCxvzhou-H.cpp">
       <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gradient descent.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="simple_bit_operation.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="3859.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="3988.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="statement machine.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="escape_back.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_天平.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source1.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

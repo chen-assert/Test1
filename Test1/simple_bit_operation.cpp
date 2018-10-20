@@ -37,34 +37,22 @@ int BigRand()
 	return RAND_MAX * rand() + rand();
 }
 int main() {
-	string temp;
-	ifstream fin("C:\\Users\\jingr\\Desktop\\work\\sh\\out.txt");
-	ofstream fout("C:\\Users\\jingr\\Desktop\\work\\sh\\process.txt", std::ofstream::app);
-	char str[10000];
-	int n = 0;
-	while (fin.getline(str, 10000)) {
-		n++;
-		if (n % 1000 == 0)cout << (double)n/(double)2000000 << endl;
-		temp = str;
-		regex a("realname");
-		regex b("idcard");
-		regex c("teacherNumber");
-		bool match1 = regex_search(temp, a);
-		bool match2 = regex_search(temp, b);
-		bool match3 = regex_search(temp, c);
-		if (match1 || match2 || match3)
-		{
-			//fout << str;
-			//cout << temp.substr(6,100)<<endl;
-			fout << temp.substr(6, 100) << endl;
-
-			if (match2) {
-				//cout << "\"password\" : \""<<temp.substr(temp.size()-9,6)<<"\","<<endl;
-				fout << "\"password\" : \"" << temp.substr(temp.size() - 9, 6) << "\"," << endl;
-
+	input_int2(n, s);
+	int *array = new int(n);
+	range0(i, n)scanf("%d", &array[i]);
+	for (int i = 1; i <= (1 << (n - 1)); i++) {
+		int sum = 0;
+		for (int o = 0; o < n; o++) {
+			if ((1<<o)&i)sum += array[o];
+		}
+		if (sum == s) {
+			for (int o = 0; o < n; o++) {
+				int flag = 0;
+				if ((1 << o)&i) {
+					printf(" %d ", array[o]);
+				}
 			}
+			printf("=%d\n", s);
 		}
 	}
-	fin.close();
-	fout.close();
 }
