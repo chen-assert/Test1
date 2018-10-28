@@ -3,8 +3,9 @@
 #include<algorithm>
 #include<limits.h>
 #include<time.h>
-#include<math.h>  
+#include <math.h>  
 #include<iostream>
+#include<functional>
 #include<fstream> 
 #include<vector>
 #include<queue>
@@ -12,7 +13,9 @@
 #include<set>
 #include<string> 
 #include<map>
+//#include"segment tree.h"
 #include<regex>
+//#include<windows.h>
 using namespace std;
 #define range(i, s, e) for (int i = (s); i < int(e); i++)
 #define range0(i, e) for (int i = 0; i < int(e); i++)
@@ -31,6 +34,39 @@ inline void read(int &x) {//only read int
 	for (c = getchar(); !('0' <= c && c <= '9'); c = getchar());
 	for (x = 0; '0' <= c && c <= '9'; x = x * 10 + c - 48, c = getchar());
 }
+int n;
+int in[100010];
+int mod = (int)1e9 + 7;
+int dfs(int pos, int num, int sum) {
+	if (pos == n)return 1;
+	/*if((n-pos)*num+sum>in[n-1]){
+		return 0;
+	}
+	
+	for (int i = pos+1;i<n; i++) {
+		if ((i-pos+1)*num+sum>in[i]) {
+			return 0;
+		}
+		if ((i - pos + 1)*num + sum == in[i]) {
+			return dfs(i,num,in[i]-num);
+		}
+	}*/
+	int re = 0;
+	for (int i = num; sum + i <= in[pos]; i++) {
+		if ((n - pos)*i + sum > in[n - 1])break;
+		re = (re + dfs(pos + 1, i, sum + i)) % mod;
+	}
+	return re;
+}
 int main() {
-
+	scanf("%d", &n);
+	range0(i, n) {
+		scanf("%d", &in[i]);
+	}
+	int min = in[n - 1];
+	for (int i = n - 1; i >= 0; i--) {
+		if (in[i] < min)min = in[i];
+		else in[i] = min;
+	}
+	printf("%d", dfs(0, 0, 0) % mod);
 }

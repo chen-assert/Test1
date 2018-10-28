@@ -153,14 +153,8 @@
     <ClCompile Include="poj2991 fail.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ICPCnanjing-E-fail.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="ICPCshenyang-I.cpp">
       <Filter>资源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ICPCshenyang.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CCPC1010.cpp">
       <Filter>资源文件</Filter>
@@ -177,25 +171,43 @@
     <ClCompile Include="simple_bit_operation.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="3859.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="3988.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="statement machine.cpp">
       <Filter>资源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="IEEE_2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="escape_back.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="IEEE_天平.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_Infinite snakes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_output_tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ICPCshenyang.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="poj3859.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="poj3988.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_friendly.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_xplore.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_make distinct.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_tree fun.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Source1.cpp">

@@ -3,16 +3,20 @@
 #include<algorithm>
 #include<limits.h>
 #include<time.h>
-#include<math.h>  
+#include <math.h>  
 #include<iostream>
+#include<functional>
 #include<fstream> 
 #include<vector>
 #include<queue>
 #include<stack>
 #include<set>
+#include<string.h> 
 #include<string> 
 #include<map>
-#include<regex>
+//#include"segment tree.h"
+//#include<regex>
+//#include<windows.h>
 using namespace std;
 #define range(i, s, e) for (int i = (s); i < int(e); i++)
 #define range0(i, e) for (int i = 0; i < int(e); i++)
@@ -31,6 +35,42 @@ inline void read(int &x) {//only read int
 	for (c = getchar(); !('0' <= c && c <= '9'); c = getchar());
 	for (x = 0; '0' <= c && c <= '9'; x = x * 10 + c - 48, c = getchar());
 }
-int main() {
-
+int in[220000];
+int another[220000];
+int n;
+ll min_ = INF;
+ll cal(int s) {
+	ll r = 0;
+	range0(i, n) {
+		r += abs(in[i]-another[i+s]);
+	}
+	return r;
 }
+int main() {
+	scanf("%d", &n);
+	range0(i, n) {
+		scanf("%d", &in[i]);
+	}
+	sort(in, in + n);
+	double avg = 0;
+	range0(i, n) {
+		avg += (double)in[i] / (double)n;
+	}
+	range0(i, n + 400) {
+		another[i] = (int)avg - n / 2 + i-200;
+	}
+	for (int i = 0; i < 400; i++) {
+		ll t = cal(i);
+		if (t < min_)min_ = t;
+	}
+	int mid = in[n / 2];
+	range0(i, n + 400) {
+		another[i] = (int)mid - n / 2 + i-200;
+	}
+	for (int i = 0; i < 400; i++) {
+		ll t = cal(i);
+		if (t < min_)min_ = t;
+	}
+	printf("%lld", min_);
+}
+
