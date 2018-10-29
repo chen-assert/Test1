@@ -174,9 +174,6 @@
     <ClCompile Include="statement machine.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="escape_back.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="IEEE_天平.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -207,10 +204,7 @@
     <ClCompile Include="IEEE_tree fun.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Source1.cpp">
+    <ClCompile Include="os.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
