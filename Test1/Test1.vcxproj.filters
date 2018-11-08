@@ -60,9 +60,6 @@
     <ClCompile Include="maxdivisor.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="hex conversion.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="DFS-shortest path.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -138,9 +135,6 @@
     <ClCompile Include="calender.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="minimum spanning tree.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="State compression_.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -174,12 +168,6 @@
     <ClCompile Include="statement machine.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="IEEE_天平.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="IEEE_Infinite snakes.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="IEEE_output_tree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -198,13 +186,19 @@
     <ClCompile Include="IEEE_xplore.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="IEEE_make distinct.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="IEEE_tree fun.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="os.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_天平.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="minimum spanning tree%28kruskal%29.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Josephus ring.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

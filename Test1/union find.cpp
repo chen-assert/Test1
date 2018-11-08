@@ -5,7 +5,6 @@
 #include<time.h>
 #include<iostream>
 #include<functional>
-//#include<windows.h>
 #define range(i, s, e) for (int i = (s); i < int(e); i++)
 #define range0(i, e) for (int i = 0; i < int(e); i++)
 #define input_int(n) int n;scanf("%d",&n);
@@ -30,7 +29,7 @@ void init_union(int n) {
 		parent = NULL;
 	}
 	parent = new int[n + 1];
-	for (int i = 0; i <= n + 1; i++) {
+	for (int i = 0; i <= n ; i++) {
 		parent[i] = i;
 	}
 }

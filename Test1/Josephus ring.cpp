@@ -11,7 +11,6 @@
 #include<queue>
 #include<stack>
 #include<set>
-#include<string.h> 
 #include<string> 
 #include<map>
 //#include"segment tree.h"
@@ -35,42 +34,14 @@ inline void read(int &x) {//only read int
 	for (c = getchar(); !('0' <= c && c <= '9'); c = getchar());
 	for (x = 0; '0' <= c && c <= '9'; x = x * 10 + c - 48, c = getchar());
 }
-int in[220000];
-int another[220000];
-int n;
-ll min_ = INF;
-ll cal(int s) {
-	ll r = 0;
-	range0(i, n) {
-		r += abs(in[i]-another[i+s]);
-	}
-	return r;
+int  n, m;
+int ysfh(int sum, int k) {
+	if (sum == k)return (m - 1) % k + 1;
+	return (ysfh(sum - 1, k) + m - 1) % (sum)+1;
 }
 int main() {
-	scanf("%d", &n);
-	range0(i, n) {
-		scanf("%d", &in[i]);
+	scanf("%d %d", &n, &m);
+	for (int i = n; i >= 1; i--) {
+		printf("%d ", ysfh(n, i));
 	}
-	sort(in, in + n);
-	double avg = 0;
-	range0(i, n) {
-		avg += (double)in[i] / (double)n;
-	}
-	range0(i, n + 400) {
-		another[i] = (int)avg - n / 2 + i-200;
-	}
-	for (int i = 0; i < 400; i++) {
-		ll t = cal(i);
-		if (t < min_)min_ = t;
-	}
-	int mid = in[n / 2];
-	range0(i, n + 400) {
-		another[i] = (int)mid - n / 2 + i-200;
-	}
-	for (int i = 0; i < 400; i++) {
-		ll t = cal(i);
-		if (t < min_)min_ = t;
-	}
-	printf("%lld", min_);
 }
-
