@@ -13,11 +13,11 @@
 using namespace std;
 int next_[1100000];
 int _next[256];
-int finder_len;
+int pattern_len;
 char str[1100000];
 void GetNext(char *start)
 {
-	int len = finder_len;//get the length  
+	int len = pattern_len;//get the length  
 
 	for (int i = 0; i < 256; i++)
 		_next[i] = -1;
@@ -61,26 +61,31 @@ int strcmp_(char *a, char *b, int start, int len) {//返回已匹配个数
 	}
 	return len;
 }
-void kmp_get_next(char *start) {//next[0]恒为0 and next[1]表示第一个字符的匹配值
-	memset(next_, 0, sizeof(int)*(finder_len + 1));
-	range(i, 1, finder_len) {
-		if (start[i] == start[next_[i]]) {
-			next_[i + 1] = next_[i] + 1;
+
+// 构造 pattern 的最大匹配数表
+void kmp_get_next(char *pattern) {
+	//next[0]恒为-1 and next[1]表示第一个字符的匹配值
+	memset(next_, 0, sizeof(int)*(pattern_len + 1));
+	next_[0] = -1;
+	int maxLength = 0;
+	for (int i = 1; i < pattern_len; i++) {
+		while (maxLength > 0 && pattern[maxLength] != pattern[i]) {
+			maxLength = next_[maxLength - 1]; // ①
 		}
-		else if (start[i] == start[0]) {
-			next_[i + 1] = 1;
+		if (pattern[i] == pattern[maxLength]) {
+			maxLength++; // ②
 		}
-		/*else {
-			next_[i+1] = 0;
-		}*/
+		next_[i] = maxLength;
 	}
 }
-int kmp(char *str,char *pattern,int strlen,int patternlen) {
+
+
+int kmp(char *str, char *pattern, int strlen, int patternlen) {
 	//pattern 是要匹配的字符串
 	kmp_get_next(pattern);
 	int sum = 0;//本次计算的模式匹配次数
 	int t = 0;
-	for (int b = 0; b < strlen - patternlen+ 1;) {
+	for (int b = 0; b < strlen - patternlen + 1;) {
 		t = strcmp_(pattern, str + b, next_[t], patternlen);
 		if (t == 0) {
 			b++;
@@ -95,7 +100,7 @@ int kmp(char *str,char *pattern,int strlen,int patternlen) {
 	return sum;
 }
 void input() {
-	scanf("%d\n", &finder_len);
+	scanf("%d\n", &pattern_len);
 	range0(i, 1100000) {
 		if (scanf("%c", str + i) == EOF)break;
 	}
@@ -105,17 +110,17 @@ int main() {
 	int strlen_ = (int)strlen(str);
 	char *maxstr = str;
 	int max = 0;
-	for (int a = 0; a < strlen_ - finder_len + 1; a++) {
+	for (int a = 0; a < strlen_ - pattern_len + 1; a++) {
 		int sum = 0;
 		char *pattern = str + a;
-		sum = SundaySearch(str, pattern, strlen_, finder_len);
-		//sum = kmp(str, pattern, strlen_, finder_len);
+		sum = SundaySearch(str, pattern, strlen_, pattern_len);
+		//sum = kmp(str, pattern, strlen_, pattern_len);
 		if (sum > max) {
 			max = sum;
 			maxstr = pattern;
 		}
 	}
-	range0(i, finder_len) {
+	range0(i, pattern_len) {
 		printf("%c", *(maxstr + i));
 	}
 	printf(" %d", max);

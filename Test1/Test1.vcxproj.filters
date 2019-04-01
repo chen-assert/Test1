@@ -129,12 +129,6 @@
     <ClCompile Include="L3-002.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="next_permutation.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="calender.cpp">
-      <Filter>资源文件</Filter>
-    </ClCompile>
     <ClCompile Include="State compression_.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -168,9 +162,6 @@
     <ClCompile Include="statement machine.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="IEEE_output_tree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="ICPCshenyang.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
@@ -199,6 +190,18 @@
       <Filter>资源文件</Filter>
     </ClCompile>
     <ClCompile Include="Josephus ring.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="next_permutation.cpp">
+      <Filter>资源文件\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="IEEE_output_tree.cpp">
+      <Filter>资源文件\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="SPFA.cpp">
+      <Filter>资源文件\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
